@@ -1,0 +1,35 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.page-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.page-container h2 {
+  text-align: center;
+  font-weight: 900;
+}
+
+.todo-list, .add-list {
+  list-style-type: none;
+  text-align: left;
+}
+
+.todo-list li {
+  padding: 10px;
+  margin: 4px 0;
+  border: 1px solid grey;
+  width: 90%;
+  position: relative;
+  min-height: 100%;
+  cursor: pointer;
+}
+
+.add-list .txt {
+  padding: 10px;
+  width: 90%;
+  border: 1px solid grey;
+}
