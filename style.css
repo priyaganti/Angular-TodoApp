@@ -33,3 +33,31 @@ html, body {
   width: 90%;
   border: 1px solid grey;
 }
+
+.done {
+  color: #9dc9a8;
+}
+
+.btn {
+  width: 40px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn.btn-done{
+  background: #9dc9a8;
+  color: #444349;
+}
+
+.todo-list li .btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  transition: width 0.4s ease-in-out;
+}
+
+.todo-list li .btn:hover {
+  width: 80px;
+}

@@ -10,6 +10,7 @@
       <ul class="todo-list" ng-repeat='todo in todos track by $index'>
         <li>
           <span>{{todo}}</span>
+          <button class="btn btn-done" ng-click="done(todo)">Done</button>
         </li>
       </ul>
       <ul class="add-list">
