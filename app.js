@@ -1,28 +1,22 @@
 //Begin with a module
-var app = angular.module('Todo', []);
+var app = angular.module('todoApp', []);
 
 // Add a controller
-app.controller('TodoCtrl', function($scope){
-  $scope.newTodo = '';
-  $scope.todos = [
-    'Learn to Paint',
-    'Practice for Half Marathon',
-    'Cook a meal'
-  ];
+app.controller('todoCtrl', function($scope){
+   $scope.todoList = [
+       {content: 'Run', done:false},
+       {content: 'Bike', done:false},
+       {content: 'Swim', done:false}
+   ];
 
-  // Remove to-do item from the list
-  $scope.done = function(todo){
-    var chosenIndex = $scope.todos.indexOf(todo);
-    if(chosenIndex !== -1){
-      $scope.todos.splice(chosenIndex, 1); //remove the element from todos array at chosen Index.
-    }
-  };
+    //add new to-do item to the list
+    $scope.addTask = function(e) {
+        if(e.which === 13){ // add new task on key enter
+            if(!$scope.newTask){ return;} //check not to add empty tasks
+        $scope.todoList.push({content:$scope.newTask, done:false});
+        $scope.newTask = "";
+        }
 
-  //add new to-do item to the list
-   $scope.add = function(e){ //e is the event
-     if(e.which === 13){
-      $scope.todos.push($scope.newTodo);
-      $scope.newTodo = '';
-    }
-  };
+    };
 });
+

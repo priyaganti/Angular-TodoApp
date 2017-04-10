@@ -1,23 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css" />
-
+    <meta charset="utf-8">
+    <title>Angular-todo</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <style>
+        #addInput{
+            margin-top: 25px;
+        }
+        #todo-list li {
+            background-color: white;
+	        padding: 10px 10px 10px 5px;
+	        position: relative;
+	        font-size: 20px;
+	        border-bottom: 1px solid #cccccc;
+            list-style-type: none;
+        }
+    </style>
 </head>
-  <body ng-app="Todo">
-    <div class='page-container' ng-controller='TodoCtrl'>
-      <h2>To Do</h2>
-      <ul class="todo-list" ng-repeat='todo in todos track by $index'>
-        <li>
-          <span>{{todo}}</span>
-          <button class="btn btn-done" ng-click="done(todo)">Done</button>
-        </li>
-      </ul>
-      <ul class="add-list">
-          <input type="text" class="txt" placeholder="New Todo" ng-model='newTodo' ng-keyup="add($event)"/>
-      </ul>
+<body ng-app="todoApp" ng-controller="todoCtrl">
+    <div class="container">
+        <div class="well col-sm-offset-3 col-sm-6">
+            <h3 style="text-align:center">Angular Todo List</h3>
+            <div ng-repeat="task in todoList" id="todo-list">
+                <li>{{task.content}}</li>
+            </div>
+            <input type="text" id="addInput" class="form-control" name="newTask" ng-model="newTask" placeholder="Enter a new todo to add" ng-keyup="addTask($event)"/>
+        </div>
     </div>
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-  <script src="app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
 </html>
