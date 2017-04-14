@@ -11,8 +11,7 @@ app.controller('todoCtrl', function($scope){
 
     //add new to-do item to the list
     $scope.addTask = function(e) {
-        if(e.which === 13){ // add new task on key enter
-            if(!$scope.newTask){ return;} //check not to add empty tasks
+        if(e.which === 13 && $scope.newTask){ // add non empty new tasks on key enter
         $scope.todoList.push({content:$scope.newTask, done:false});
         $scope.newTask = "";
         }
