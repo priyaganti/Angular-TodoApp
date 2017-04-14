@@ -17,5 +17,10 @@ app.controller('todoCtrl', function($scope){
         }
 
     };
+
+    $scope.removeTask = function($index){
+        //remove one element from the specified position
+        $scope.todoList.splice($index,1);
+    };
 });
 
