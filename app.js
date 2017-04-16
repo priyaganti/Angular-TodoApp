@@ -22,5 +22,15 @@ app.controller('todoCtrl', function($scope){
         //remove one element from the specified position
         $scope.todoList.splice($index,1);
     };
+
+    $scope.getRemaining = function(){
+      var remCount = 0;
+      angular.forEach($scope.todoList, function(task){
+        if(!task.done){
+          remCount++;
+        }
+      });
+      return remCount;
+    };
 });
 
