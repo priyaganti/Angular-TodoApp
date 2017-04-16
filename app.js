@@ -32,5 +32,15 @@ app.controller('todoCtrl', function($scope){
       });
       return remCount;
     };
+
+    $scope.clearCompleted = function(){
+      var oldList = $scope.todoList;
+      $scope.todoList = [];
+      angular.forEach(oldList, function(task){
+         if(!task.done){
+             $scope.todoList.push(task);
+         }
+      });
+    };
 });
 
